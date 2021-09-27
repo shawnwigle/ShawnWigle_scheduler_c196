@@ -10,4 +10,5 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
         android:id="@+id/termsRecView"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

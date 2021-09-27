@@ -7,14 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
-
 import edu.wgu.shawnwigle_scheduler.R;
+import edu.wgu.shawnwigle_scheduler.database.course.Course;
 
 public class TermRecViewAdapter extends RecyclerView.Adapter<TermRecViewAdapter.ViewHolder> {
     private static final String TAG = "TermRecViewAdapter";
@@ -28,13 +26,13 @@ public class TermRecViewAdapter extends RecyclerView.Adapter<TermRecViewAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_term, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.term_list_parent_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Log.d(TAG, "onBindViewHolder: Called");
+        Log.d(TAG, "onBindViewHolder term: Called");
         holder.termTitle.setText(terms.get(holder.getAdapterPosition()).getTermTitle());
         holder.termStartDate.setText(terms.get(holder.getAdapterPosition()).getStartDate());
         holder.termEndDate.setText(terms.get(holder.getAdapterPosition()).getEndDate());
@@ -43,6 +41,7 @@ public class TermRecViewAdapter extends RecyclerView.Adapter<TermRecViewAdapter.
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext, terms.get(holder.getAdapterPosition()).getTermTitle() + " Selected", Toast.LENGTH_SHORT).show();
+
             }
         });
     }

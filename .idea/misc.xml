@@ -32,6 +32,12 @@
         <entry key="..\:/Users/the_d/AndroidStudioProjects/ShawnWigle_scheduler/app/src/main/res/menu/menu_main.xml" value="0.3265625" />
         <entry key="..\:/Users/the_d/AndroidStudioProjects/ShawnWigle_scheduler/app/src/main/res/menu/navigation.xml" value="0.3265625" />
         <entry key="..\:/Users/the_d/AndroidStudioProjects/ShawnWigle_scheduler/app/src/main/res/mipmap-anydpi-v26/terms.xml" value="0.5661458333333333" />
+        <entry key="app/src/main/res/layout/activity_all_terms.xml" value="0.31567028985507245" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+        <entry key="app/src/main/res/layout/list_child_item_term.xml" value="0.31567028985507245" />
+        <entry key="app/src/main/res/layout/list_item_term.xml" value="0.31567028985507245" />
+        <entry key="app/src/main/res/layout/term_list_child_item.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/term_list_parent_item.xml" value="0.335" />
       </map>
     </option>
   </component>
