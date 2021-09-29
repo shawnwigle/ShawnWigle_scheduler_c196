@@ -9,14 +9,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import edu.wgu.shawnwigle_scheduler.R;
 import edu.wgu.shawnwigle_scheduler.database.course.Course;
+import edu.wgu.shawnwigle_scheduler.database.course.CourseRecViewAdapter;
 
 public class TermRecViewAdapter extends RecyclerView.Adapter<TermRecViewAdapter.ViewHolder> {
     private static final String TAG = "TermRecViewAdapter";
     private ArrayList<Term> terms = new ArrayList<>();
+    private ArrayList<Course> courses = new ArrayList<>();
     private Context mContext;
 
     public TermRecViewAdapter(Context mContext) {
@@ -32,17 +37,22 @@ public class TermRecViewAdapter extends RecyclerView.Adapter<TermRecViewAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false);
+
         Log.d(TAG, "onBindViewHolder term: Called");
         holder.termTitle.setText(terms.get(holder.getAdapterPosition()).getTermTitle());
         holder.termStartDate.setText(terms.get(holder.getAdapterPosition()).getStartDate());
         holder.termEndDate.setText(terms.get(holder.getAdapterPosition()).getEndDate());
-        
+
+        holder.courseRecView.setLayoutManager(layoutManager);
+
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(mContext, terms.get(holder.getAdapterPosition()).getTermTitle() + " Selected", Toast.LENGTH_SHORT).show();
 
             }
+
         });
     }
 
@@ -59,6 +69,7 @@ public class TermRecViewAdapter extends RecyclerView.Adapter<TermRecViewAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder{
        private CardView parent;
        private TextView termTitle, termStartDate, termEndDate;
+       private RecyclerView courseRecView;
 
        public ViewHolder(@NonNull View itemView) {
            super(itemView);
@@ -66,6 +77,7 @@ public class TermRecViewAdapter extends RecyclerView.Adapter<TermRecViewAdapter.
            termTitle = itemView.findViewById(R.id.txtTermTitle);
            termStartDate = itemView.findViewById(R.id.txtTermStartDate);
            termEndDate = itemView.findViewById(R.id.txtTermEndDate);
+           courseRecView = itemView.findViewById(R.id.courseRecView);
        }
    }
 }

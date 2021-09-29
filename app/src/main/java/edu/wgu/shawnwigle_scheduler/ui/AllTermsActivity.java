@@ -16,7 +16,8 @@ import edu.wgu.shawnwigle_scheduler.database.term.TermRecViewAdapter;
 
 public class AllTermsActivity extends AppCompatActivity {
 
-    private RecyclerView termsRecView, coursesRecView;
+    private RecyclerView termsRecView;
+    private RecyclerView coursesRecView;
     private TermRecViewAdapter termAdapter;
     private CourseRecViewAdapter courseAdapter;
 
@@ -27,15 +28,6 @@ public class AllTermsActivity extends AppCompatActivity {
         this.setTitle("All Terms");
         setContentView(R.layout.activity_all_terms);
 
-        termAdapter = new TermRecViewAdapter(this);
-        termsRecView = findViewById(R.id.termsRecView);
-        courseAdapter = new CourseRecViewAdapter(this);
-        coursesRecView = findViewById(R.id.coursesRecView);
-
-        termsRecView.setAdapter(termAdapter);
-        termsRecView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        coursesRecView.setAdapter(courseAdapter);
-        coursesRecView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
         ArrayList<Term> terms = new ArrayList<>();
         terms.add(new Term("Term 1", "Start Date", "End Date"));
@@ -57,7 +49,17 @@ public class AllTermsActivity extends AppCompatActivity {
         courses.add(new Course("Course 7", "Start Date", "End Date", "active"));
         courses.add(new Course("Course 8", "Start Date", "End Date", "active"));
 
+
+        termAdapter = new TermRecViewAdapter(this);
         termAdapter.setTerms(terms);
+        termsRecView = findViewById(R.id.termsRecView);
+        termsRecView.setAdapter(termAdapter);
+        termsRecView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        courseAdapter = new CourseRecViewAdapter(this);
         courseAdapter.setCourses(courses);
+        coursesRecView = findViewById(R.id.courseRecView);
+        coursesRecView.setAdapter(courseAdapter);
+        coursesRecView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
     }
 }

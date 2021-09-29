@@ -14,10 +14,10 @@
         android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTerm_parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:id="@+id/clTerm_parent">
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/txtTermTitle"
@@ -68,7 +68,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/coursesRecView"
+            android:id="@+id/courseRecView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/clTerm_parent"
