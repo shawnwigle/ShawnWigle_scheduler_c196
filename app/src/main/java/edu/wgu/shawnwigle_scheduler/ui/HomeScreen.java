@@ -9,7 +9,7 @@ import android.widget.Button;
 
 import edu.wgu.shawnwigle_scheduler.R;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeScreen extends AppCompatActivity {
     private Button btnTerms, btnCourses, btnAssessments;
 
     @Override
@@ -25,6 +25,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(view.getContext(), AllTermsActivity.class);
+                view.getContext().startActivity(myIntent);
+            }
+        });
+        btnCourses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), AllCoursesActivity.class);
+                view.getContext().startActivity(myIntent);
+            }
+        });
+        btnAssessments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(view.getContext(), AllAssessmentsActivity.class);
                 view.getContext().startActivity(myIntent);
             }
         });

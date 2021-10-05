@@ -25,7 +25,7 @@ public class CourseRecViewAdapter extends RecyclerView.Adapter<CourseRecViewAdap
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.term_list_child_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.course_list_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -33,8 +33,8 @@ public class CourseRecViewAdapter extends RecyclerView.Adapter<CourseRecViewAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Log.d(TAG, "onBindViewHolder course: Called");
         holder.courseTitle.setText(courses.get(holder.getAdapterPosition()).getCourseTitle());
-        holder.courseStartDate.setText(courses.get(holder.getAdapterPosition()).getCourseStart());
-        holder.courseEndDate.setText(courses.get(holder.getAdapterPosition()).getCourseEnd());
+        holder.courseStartDate.setText(courses.get(holder.getAdapterPosition()).getCourseStart().toString());
+        holder.courseEndDate.setText(courses.get(holder.getAdapterPosition()).getCourseEnd().toString());
 
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override

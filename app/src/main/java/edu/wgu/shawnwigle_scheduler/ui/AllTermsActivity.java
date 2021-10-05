@@ -5,22 +5,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
 import edu.wgu.shawnwigle_scheduler.R;
-import edu.wgu.shawnwigle_scheduler.database.course.Course;
-import edu.wgu.shawnwigle_scheduler.database.course.CourseRecViewAdapter;
 import edu.wgu.shawnwigle_scheduler.database.term.Term;
 import edu.wgu.shawnwigle_scheduler.database.term.TermRecViewAdapter;
 
 public class AllTermsActivity extends AppCompatActivity {
 
     private RecyclerView termsRecView;
-    private RecyclerView coursesRecView;
     private TermRecViewAdapter termAdapter;
-    private CourseRecViewAdapter courseAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,27 +27,9 @@ public class AllTermsActivity extends AppCompatActivity {
         this.setTitle("All Terms");
         setContentView(R.layout.activity_all_terms);
 
-
+        // TODO: change to DAO actions
         ArrayList<Term> terms = new ArrayList<>();
         terms.add(new Term("Term 1", "Start Date", "End Date"));
-        terms.add(new Term("Term 2", "Start Date", "End Date"));
-        terms.add(new Term("Term 3", "Start Date", "End Date"));
-        terms.add(new Term("Term 4", "Start Date", "End Date"));
-        terms.add(new Term("Term 5", "Start Date", "End Date"));
-        terms.add(new Term("Term 6", "Start Date", "End Date"));
-        terms.add(new Term("Term 7", "Start Date", "End Date"));
-        terms.add(new Term("Term 8", "Start Date", "End Date"));
-
-        ArrayList<Course> courses = new ArrayList<>();
-        courses.add(new Course("Course 1", "Start Date", "End Date", "active"));
-        courses.add(new Course("Course 2", "Start Date", "End Date", "active"));
-        courses.add(new Course("Course 3", "Start Date", "End Date", "active"));
-        courses.add(new Course("Course 4", "Start Date", "End Date", "active"));
-        courses.add(new Course("Course 5", "Start Date", "End Date", "active"));
-        courses.add(new Course("Course 6", "Start Date", "End Date", "active"));
-        courses.add(new Course("Course 7", "Start Date", "End Date", "active"));
-        courses.add(new Course("Course 8", "Start Date", "End Date", "active"));
-
 
         termAdapter = new TermRecViewAdapter(this);
         termAdapter.setTerms(terms);
@@ -56,10 +37,13 @@ public class AllTermsActivity extends AppCompatActivity {
         termsRecView.setAdapter(termAdapter);
         termsRecView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-        courseAdapter = new CourseRecViewAdapter(this);
-        courseAdapter.setCourses(courses);
-        coursesRecView = findViewById(R.id.courseRecView);
-        coursesRecView.setAdapter(courseAdapter);
-        coursesRecView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        FloatingActionButton btnAddTerm = findViewById(R.id.btnAddTerm);
+        btnAddTerm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
     }
 }

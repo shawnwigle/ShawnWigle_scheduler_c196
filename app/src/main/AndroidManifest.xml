@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.wgu.shawnwigle_scheduler" >
+    package="edu.wgu.shawnwigle_scheduler">
 
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents" >
+        android:theme="@style/Theme.MaterialComponents">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.AssessmentDetailView"
+            android:exported="true" />
+        <activity
+            android:name=".ui.TermDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.CourseDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.HomeScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +28,13 @@
         </activity>
         <activity
             android:name=".ui.AllTermsActivity"
-            android:exported="true"/>
+            android:exported="true" />
+        <activity
+            android:name=".ui.AllCoursesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.AllAssessmentsActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

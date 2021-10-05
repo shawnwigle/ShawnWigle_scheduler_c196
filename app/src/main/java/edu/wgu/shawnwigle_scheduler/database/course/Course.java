@@ -1,21 +1,28 @@
 package edu.wgu.shawnwigle_scheduler.database.course;
 
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity(tableName = "course_table")
 public class Course {
     @PrimaryKey(autoGenerate = true)
     private int courseId;
     private String courseTitle;
-    private String courseStart;
-    private String courseEnd;
+    private LocalDateTime courseStart;
+    private LocalDateTime courseEnd;
     private String courseStatus; // maybe make this a chooser with in-progress, completed, dropped, plan to take
+    private String instructorName;
+    private String instructorPhone;
+    private String instructorEmail;
+    private String noteTitle;
+    private String noteContent;
 
-    //TODO: Associate assessments with course
-    //TODO: Associate notes with course
-    //TODO: Associate instructors with course? not sure if we want to add them on a separate screen
-    //      or just allow them to be added on course screen and plopped into their own db table
+
+    //TODO: Associate assessments with course. Probably as foreign key
 
     // Getters
     public int getCourseId() {
@@ -26,16 +33,36 @@ public class Course {
         return courseTitle;
     }
 
-    public String getCourseStart() {
+    public LocalDateTime getCourseStart() {
         return courseStart;
     }
 
-    public String getCourseEnd() {
+    public LocalDateTime getCourseEnd() {
         return courseEnd;
     }
 
     public String getCourseStatus() {
         return courseStatus;
+    }
+
+    public String getInstructorName() {
+        return instructorName;
+    }
+
+    public String getInstructorPhone() {
+        return instructorPhone;
+    }
+
+    public String getInstructorEmail() {
+        return instructorEmail;
+    }
+
+    public String getNoteTitle() {
+        return noteTitle;
+    }
+
+    public String getNoteContent() {
+        return noteContent;
     }
 
     // Setters
@@ -44,21 +71,18 @@ public class Course {
     }
 
     // Constructor
-    public Course(String courseTitle, String courseStart, String courseEnd, String courseStatus) {
+    public Course(String courseTitle, LocalDateTime courseStart, LocalDateTime courseEnd, String courseStatus, String instructorName, String instructorPhone, String instructorEmail, String noteTitle, String noteContent) {
         this.courseTitle = courseTitle;
         this.courseStart = courseStart;
         this.courseEnd = courseEnd;
         this.courseStatus = courseStatus;
+        this.instructorName = instructorName;
+        this.instructorPhone = instructorPhone;
+        this.instructorEmail = instructorEmail;
+        this.noteTitle = noteTitle;
+        this.noteContent = noteContent;
     }
 
-    @Override
-    public String toString() {
-        return "Course{" +
-                "courseId=" + courseId +
-                ", courseTitle='" + courseTitle + '\'' +
-                ", courseStart='" + courseStart + '\'' +
-                ", courseEnd='" + courseEnd + '\'' +
-                ", courseStatus='" + courseStatus + '\'' +
-                '}';
-    }
+    // toString
+
 }
