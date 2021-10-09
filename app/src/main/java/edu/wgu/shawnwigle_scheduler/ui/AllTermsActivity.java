@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -29,7 +30,8 @@ public class AllTermsActivity extends AppCompatActivity {
 
         // TODO: change to DAO actions
         ArrayList<Term> terms = new ArrayList<>();
-        terms.add(new Term("Term 1", "Start Date", "End Date"));
+        terms.add(new Term("Term 1", "JAN 01 2021", "JAN 02 2021"));
+        terms.add(new Term("Term 2", "JAN 01 2024", "JAN 02 2025"));
 
         termAdapter = new TermRecViewAdapter(this);
         termAdapter.setTerms(terms);
@@ -41,8 +43,8 @@ public class AllTermsActivity extends AppCompatActivity {
         btnAddTerm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent myIntent = new Intent(view.getContext(), TermDetailActivity.class);
+                view.getContext().startActivity(myIntent);
             }
         });
     }

@@ -6,4 +6,100 @@
     android:layout_height="match_parent"
     tools:context=".ui.CourseDetailActivity">
 
+    <TextView
+        android:id="@+id/txtCourseTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course Title: "
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="21dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="courseTitle"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="3dp" />
+
+    <EditText
+        android:id="@+id/etInstructorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="instructorName"
+        tools:layout_editor_absoluteX="129dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <TextView
+        android:id="@+id/txtStartDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Date: "
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="64dp" />
+
+    <TextView
+        android:id="@+id/txtEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Date: "
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="104dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="101dp"
+        android:layout_height="36dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="56dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="101dp"
+        android:layout_height="36dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+    <Spinner
+        android:id="@+id/spnrCourseStatus"
+        style="@style/Widget.AppCompat.Spinner.DropDown"
+        android:layout_width="168dp"
+        android:layout_height="35dp"
+        tools:layout_editor_absoluteX="110dp"
+        tools:layout_editor_absoluteY="141dp"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/txtCourseType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Course Type:"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="149dp" />
+
+    <TextView
+        android:id="@+id/txtInstructorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instructor Name"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="201dp" />
+
+    <TextView
+        android:id="@+id/txtInstructorNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instructor Phone"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="248dp" />
+
+    <EditText
+        android:id="@+id/etInstructorPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="237dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

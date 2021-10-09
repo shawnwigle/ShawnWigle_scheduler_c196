@@ -12,8 +12,8 @@ public class Course {
     @PrimaryKey(autoGenerate = true)
     private int courseId;
     private String courseTitle;
-    private LocalDateTime courseStart;
-    private LocalDateTime courseEnd;
+    private String courseStart;
+    private String courseEnd;
     private String courseStatus; // maybe make this a chooser with in-progress, completed, dropped, plan to take
     private String instructorName;
     private String instructorPhone;
@@ -33,11 +33,11 @@ public class Course {
         return courseTitle;
     }
 
-    public LocalDateTime getCourseStart() {
+    public String getCourseStart() {
         return courseStart;
     }
 
-    public LocalDateTime getCourseEnd() {
+    public String getCourseEnd() {
         return courseEnd;
     }
 
@@ -71,7 +71,7 @@ public class Course {
     }
 
     // Constructor
-    public Course(String courseTitle, LocalDateTime courseStart, LocalDateTime courseEnd, String courseStatus, String instructorName, String instructorPhone, String instructorEmail, String noteTitle, String noteContent) {
+    public Course(String courseTitle, String courseStart, String courseEnd, String courseStatus, String instructorName, String instructorPhone, String instructorEmail, String noteTitle, String noteContent) {
         this.courseTitle = courseTitle;
         this.courseStart = courseStart;
         this.courseEnd = courseEnd;

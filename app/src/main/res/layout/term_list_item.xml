@@ -23,9 +23,10 @@
                 android:id="@+id/txtTermTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
                 android:text="Term Title"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.047"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,26 +34,25 @@
                 android:id="@+id/txtTermStartDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="170dp"
                 android:layout_toEndOf="@+id/txtTermTitle"
                 android:text="Start Date"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/txtTermDateDivider"
+                app:layout_constraintEnd_toStartOf="@+id/txtTermEndDate"
+                app:layout_constraintHorizontal_bias="0.866"
                 app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toEndOf="@+id/txtTermTitle"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/txtTermDateDivider"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:text="-"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/txtTermEndDate"
                 app:layout_constraintStart_toEndOf="@+id/txtTermStartDate"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.2" />
 
             <TextView
                 android:id="@+id/txtTermEndDate"

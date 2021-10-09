@@ -31,7 +31,7 @@ public class AllCoursesActivity extends AppCompatActivity {
 
         // TODO: change to DAO actions
         ArrayList<Course> courses = new ArrayList<>();
-        courses.add(new Course("Course 1",  LocalDateTime.now(), LocalDateTime.now(), "started", "jb",
+        courses.add(new Course("Course 1",  "sdate", "edate", "started", "jb",
                 "9384938484", "email@email.com","note","note desc"));
 
         courseAdapter = new CourseRecViewAdapter(this);

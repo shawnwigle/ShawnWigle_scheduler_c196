@@ -6,64 +6,98 @@
     android:layout_height="match_parent"
     tools:context=".ui.TermDetailActivity">
 
-    <TextView
-        android:id="@+id/termTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Term Title: "
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.084" />
-
     <EditText
         android:id="@+id/etTermTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toEndOf="@+id/termTitle"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintVertical_bias="0.114" />
+
+    <TextView
+        android:id="@+id/termTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Term Title: "
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.126"
+        android:hint="Term Title"/>
 
     <TextView
         android:id="@+id/termStartDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start Date: "
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/termTitle"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.055" />
 
-    <!--
-    <DatePicker
-        android:id="@+id/date_picker"
-        android:layout_width="401dp"
-        android:layout_height="439dp"
-        android:layout_marginStart="12dp"
-        android:layout_weight="4"
-        android:calendarViewShown="false"
-        android:spinnersShown="true"
+
+    <Button
+        android:id="@+id/btnStartDatePicker"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_700"
+        android:text="JAN 01 2020"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/termStartDate"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.21" />
 
-    <TimePicker
-        android:id="@+id/time_picker"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="454dp" />
-        -->
+    <TextView
+        android:id="@+id/termEndDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Date: "
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/termStartDate"
+        app:layout_constraintVertical_bias="0.098" />
+
+    <Button
+        android:id="@+id/btnEndDatePicker"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:background="@color/purple_700"
+        android:text="JAN 01 2020"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/termEndDate"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartDatePicker"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

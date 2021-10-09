@@ -1,6 +1,7 @@
 package edu.wgu.shawnwigle_scheduler.database.term;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import edu.wgu.shawnwigle_scheduler.R;
+import edu.wgu.shawnwigle_scheduler.ui.TermDetailActivity;
 
 public class TermRecViewAdapter extends RecyclerView.Adapter<TermRecViewAdapter.ViewHolder> {
     private static final String TAG = "TermRecViewAdapter";
@@ -43,8 +45,15 @@ public class TermRecViewAdapter extends RecyclerView.Adapter<TermRecViewAdapter.
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, terms.get(holder.getAdapterPosition()).getTermTitle() + " Selected", Toast.LENGTH_SHORT).show();
+                String termTitle = holder.termTitle.getText().toString();
+                String termStartDate = holder.termStartDate.getText().toString();
+                String termEndDate = holder.termEndDate.getText().toString();
 
+                Intent myIntent = new Intent(view.getContext(), TermDetailActivity.class);
+                myIntent.putExtra("termTitle", termTitle);
+                myIntent.putExtra("termStartDate", termStartDate);
+                myIntent.putExtra("termEndDate", termEndDate);
+                view.getContext().startActivity(myIntent);
             }
 
         });
